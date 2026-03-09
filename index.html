@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realistic 3D Earth Explorer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/cesium@1.118/Build/Cesium/Widgets/widgets.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="panel">
+        <h1>🌍 Realistic 3D Earth</h1>
+        <p>
+          Paste your Cesium ion access token to unlock terrain, global imagery,
+          and photorealistic 3D buildings. Then drag, pan, tilt, and zoom deeply
+          to explore cities.
+        </p>
+
+        <label for="token">Cesium ion token</label>
+        <input id="token" type="password" placeholder="Paste token here" />
+
+        <div class="actions">
+          <button id="start">Launch Earth</button>
+          <button id="nyc" disabled>Fly to NYC</button>
+          <button id="tokyo" disabled>Fly to Tokyo</button>
+          <button id="paris" disabled>Fly to Paris</button>
+        </div>
+
+        <details>
+          <summary>Mouse controls</summary>
+          <ul>
+            <li>Left drag: orbit</li>
+            <li>Right drag / Ctrl + drag: tilt</li>
+            <li>Middle drag / Shift + drag: pan</li>
+            <li>Scroll wheel: zoom in/out</li>
+          </ul>
+        </details>
+
+        <p id="status" class="status">Waiting for token…</p>
+      </aside>
+      <main id="cesiumContainer"></main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/cesium@1.118/Build/Cesium/Cesium.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
